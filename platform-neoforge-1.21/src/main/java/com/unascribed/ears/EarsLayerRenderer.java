@@ -204,6 +204,7 @@ public class EarsLayerRenderer extends RenderLayer<AbstractClientPlayer, PlayerM
 				ItemStack equipment = peer.getItemBySlot(slot);
 				ArmorItem ai = (ArmorItem)equipment.getItem();
 				ArmorMaterial m = ai.getMaterial().value();
+				if(m.layers().isEmpty()) return;
 				AccessorHumanoidArmorLayer aafr = (AccessorHumanoidArmorLayer)afr;
 
 				int c = equipment.is(ItemTags.DYEABLE) ? DyedItemColor.getOrDefault(equipment, -6265536): -1;
